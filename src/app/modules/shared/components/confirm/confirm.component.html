@@ -1,0 +1,9 @@
+<h1 mat-dialog-title> Confirmacão </h1>
+<div mat-dialog-content>
+    <p>Tem certeza ao excluir a tarefa?</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Não</button>
+    <button mat-button (click)="delete()" cdkFocusInitial>Sim</button>
+
+</div>

@@ -1,0 +1,53 @@
+<h2 mat-dialog-title> {{ estadoFormulario }} nova Tarefa </h2>
+<mat-dialog-content>
+
+    <form [formGroup]="tarefaForm">
+        <div class="tarefa-container">
+
+            <mat-form-field>
+                <input matInput placeholder="Nome da Tarefa" formControlName="nome" required/>
+            </mat-form-field>
+
+            <form [formGroup]="tarefaForm">
+                <div class="tarefa-container">
+                    <!-- ... outros campos ... -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Custo</mat-label>
+                        <input matInput formControlName="custo" placeholder="Custo (R$)"
+                               (blur)="formatarCusto()" (focus)="desformatarCusto()"
+                               type="text">
+                        <mat-error *ngIf="tarefaForm.get('custo')?.hasError('required')">
+                            Custo é <strong>obrigatório</strong>
+                        </mat-error>
+                        <mat-error *ngIf="tarefaForm.get('custo')?.hasError('min')">
+                            Custo não pode ser <strong>negativo</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+            
+            
+  
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Data Limite no formato YYYY/mm/dd" formControlName="dataLimite" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button mat-button color="primary" (click)="onSave()" [disabled]="tarefaForm.invalid">
+        <mat-icon>save</mat-icon> Salvar
+    </button>
+
+    <button mat-button color="primary" (click)="onCancel()">
+        <mat-icon>cancel</mat-icon> Cancelar
+    </button>
+
+</mat-dialog-actions>

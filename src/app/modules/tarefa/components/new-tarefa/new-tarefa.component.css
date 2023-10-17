@@ -1,0 +1,10 @@
+.tarefa-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.tarefa-container > * {
+    width: 100%;
+}
+
+
