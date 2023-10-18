@@ -62,7 +62,7 @@ Este projeto é o frontend do sistema Lista de Tarefas, um sistema web que permi
 - Implementações possíveis
   - Botões "subir" e "descer" em cada linha.
  
-  ## Pré-requisitos
+## Pré-requisitos
 - Node.js (versão 16.14.0) e npm (Versão 8.3.1)
 - Angular CLI (version 16.1.5)
 
