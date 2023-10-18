@@ -1,27 +1,81 @@
-# Front Sistema Lista de Tarefas
+# Sistema Lista de Tarefas - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+## Descrição
+Este projeto é o frontend do sistema Lista de Tarefas, um sistema web que permite ao usuário criar, editar, excluir e reordenar tarefas.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Campos
+- **Identificador da tarefa** (chave primária)
+- **Nome da tarefa:**
+- Não deve permitir duplicidade.
+- **Custo (R$):**
+- Valor fracionário maior ou igual a zero.
+- **Data limite:**
+- Deve ser uma data válida.
+- Exibida sempre no formato DD/MM/AAAA.
+- **Ordem de apresentação** (campo numérico):
+- Não repetido.
+- Usado para ordenar os registros na tela.
 
-## Code scaffolding
+## Funcionalidade
+## Lista de Tarefas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- É a página principal do sistema.
+- Lista todos os registros da tabela "Tarefas".
+- Todos os campos, exceto "Ordem de apresentação", são apresentados.
+- Ordenadas pelo campo "Ordem de apresentação".
+- Tarefa com custo ≥ R$1.000,00 tem apresentação diferenciada (e.g., fundo amarelo).
+- Dois botões ao lado de cada registro:
+  - Editar
+  - Excluir
+- Botão para Incluir novo registro ao final da listagem.
 
-## Build
+## Excluir
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Exclui o registro da tarefa selecionada.
+- Solicita confirmação (Sim/Não) antes da exclusão.
 
-## Running unit tests
+## Editar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Edição de:
+  - Nome da Tarefa
+  - Custo
+  - Data Limite
+- Verificação de nome duplicado.
+- Implementações possíveis:
+  - Edição direta na tela principal.
+  - Nova tela (popup) para edição.
 
-## Running end-to-end tests
+## Incluir
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Inclusão de nova tarefa.
+- Campos obrigatórios:
+  - Nome da Tarefa
+  - Custo
+  - Data Limite
+- Demais campos são gerados automaticamente.
+- Novo registro é adicionado ao final.
 
-## Further help
+## Reordenação das Tarefas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Altera a ordem de apresentação.
+- Implementações possíveis
+  - Botões "subir" e "descer" em cada linha.
+ 
+  ## Pré-requisitos
+- Node.js (versão 16.14.0) e npm (Versão 8.3.1)
+- Angular CLI (version 16.1.5)
+
+
+## Clone o repositório
+git clone https://github.com/Ronaldop12/tarefa-front.git
+
+## Entre no diretório do projeto
+cd tarefa-front
+
+## Instale as dependências
+npm install
+
+## Execute o servidor de desenvolvimento
+ng serve
+
